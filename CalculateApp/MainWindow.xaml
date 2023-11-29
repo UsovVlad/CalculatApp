@@ -5,8 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalculateApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Calculator" Height="700" Width="450" WindowStyle="ThreeDBorderWindow">
+    <Grid x:Name="MainRoot" Background="#FF010101" >
 
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" >
+            <TextBlock Text="" x:Name="textInput" Foreground="#FFFAFAFA" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0" FontFamily="Arial" FontSize="36" TextWrapping="Wrap"/>
+        </ScrollViewer>
+
+        <TextBox Grid.Row="1" Grid.Column="0" Text="" Grid.ColumnSpan="4" x:Name="textOutput" Foreground="#FFA1CC72" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0" FontFamily="Arial" FontSize="24" TextWrapping="Wrap" Background="Transparent">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+
+        <Button Grid.Column="0" Grid.Row="2" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFF66F69">C</Button>
+        <Button Grid.Column="1" Grid.Row="2" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FF9CD260">(</Button>
+        <Button Grid.Column="2" Grid.Row="2" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FF9CD260">)</Button>
+        <Button Grid.Column="3" Grid.Row="2" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FF9CD260">/</Button>
+
+        <Button Grid.Column="0" Grid.Row="3" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFFAFAFA">7</Button>
+        <Button Grid.Column="1" Grid.Row="3" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFFAFAFA">8</Button>
+        <Button Grid.Column="2" Grid.Row="3" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFFAFAFA">9</Button>
+        <Button Grid.Column="3" Grid.Row="3" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FF9CD260">*</Button>
+
+        <Button Grid.Column="0" Grid.Row="4" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFFAFAFA">4</Button>
+        <Button Grid.Column="1" Grid.Row="4" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFFAFAFA">5</Button>
+        <Button Grid.Column="2" Grid.Row="4" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFFAFAFA">6</Button>
+        <Button Grid.Column="3" Grid.Row="4" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FF9CD260">-</Button>
+
+        <Button Grid.Column="0" Grid.Row="5" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFFAFAFA">1</Button>
+        <Button Grid.Column="1" Grid.Row="5" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFFAFAFA">2</Button>
+        <Button Grid.Column="2" Grid.Row="5" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFFAFAFA">3</Button>
+        <Button Grid.Column="3" Grid.Row="5" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FF9CD260" >+</Button>
+
+        <Button Grid.Column="0" Grid.Row="6" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="24" Height="80" Width="80" Foreground="#FFF66F69">Del</Button>
+        <Button Grid.Column="1" Grid.Row="6" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFFAFAFA">0</Button>
+        <Button Grid.Column="2" Grid.Row="6" Click="Button_Click_1" Background="#FF1F1F1D" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFFAFAFA">,</Button>
+        <Button Grid.Column="3" Grid.Row="6" Click="Button_Click_1" Background="#FF427E04" BorderBrush="#00673AB7" FontFamily="Arial" FontSize="36" Height="80" Width="80" Foreground="#FFFAFAFA">=</Button>
     </Grid>
 </Window>
